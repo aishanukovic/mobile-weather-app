@@ -162,6 +162,17 @@ npm install
 
 ---
 
+
+## Reset Cache
+
+If you encounter weird behavior:
+
+```bash
+npx expo start -c
+```
+
+---
+
 ## .gitignore
 
 Make sure the `.env` file is ignored by Git. Your `.gitignore` should include:
@@ -184,13 +195,3 @@ npx expo start --web
 ```
 
 > Some features like geolocation or push notifications might not work in the browser.
-
----
-
-## Reset Cache
-
-If you encounter weird behavior:
-
-```bash
-npx expo start -c
-```
