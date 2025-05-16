@@ -3,7 +3,7 @@ import { Tabs } from 'expo-router';
 
 export default function CityLayout() {
   const triggerTabHaptic = () => {
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy); // 👈 Light haptic on tab press
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
   };
 
   return (

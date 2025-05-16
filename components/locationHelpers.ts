@@ -9,7 +9,7 @@ export const getCurrentLocation = async () => {
       await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
       setTimeout(() => {
         Alert.alert('Permission Denied', 'Location access is required.');
-      }, 50); // Slight delay ensures haptic isn't suppressed by alert
+      }, 50);
       return null;
     }
 

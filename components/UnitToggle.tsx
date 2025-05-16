@@ -11,7 +11,7 @@ const UnitToggle = () => {
   const isFahrenheit = temperatureUnit === 'fahrenheit';
 
   const handleToggle = () => {
-    Haptics.selectionAsync(); // 👈 light tap when switching units
+    Haptics.selectionAsync();
     dispatch(toggleTemperatureUnit());
   };
 

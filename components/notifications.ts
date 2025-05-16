@@ -25,7 +25,7 @@ export const registerForPushNotificationsAsync = async (): Promise<boolean> => {
 };
 
 export const scheduleDailyForecastNotification = async () => {
-  await Notifications.cancelAllScheduledNotificationsAsync(); // Clear existing
+  await Notifications.cancelAllScheduledNotificationsAsync();
   await Notifications.scheduleNotificationAsync({
     content: {
       title: '🌤️ Today\'s Forecast',
@@ -35,7 +35,7 @@ export const scheduleDailyForecastNotification = async () => {
       hour: 8,
       minute: 0,
       repeats: true,
-      type: 'calendar', // Using the correct type for calendar-based triggers
+      type: 'calendar',
     },
   });
 };

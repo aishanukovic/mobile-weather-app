@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import WeatherMap from '../../components-native/WeatherMap';
 import { useAppDispatch } from '../../redux/hooks';
-import { fetchForecastData } from '../../redux/forecastSlice'; // ✅ Updated
+import { fetchForecastData } from '../../redux/forecastSlice';
 
 const WeatherMapScreen = () => {
   const { city } = useLocalSearchParams();
@@ -13,7 +13,7 @@ const WeatherMapScreen = () => {
   useEffect(() => {
     if (typeof city === 'string') {
       const cityOnly = city.split(',')[0].trim();
-      dispatch(fetchForecastData(cityOnly)); // ✅ Updated
+      dispatch(fetchForecastData(cityOnly));
     }
   }, [city, dispatch]);
 

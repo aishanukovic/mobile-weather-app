@@ -125,7 +125,6 @@ const CityWeatherScreen = () => {
         resizeMode="contain"
       />
 
-      {/* 🔔 Bell Icon */}
       <TouchableOpacity
         onPress={handleBellToggle}
         style={{ position: 'absolute', top: insets.top, right: 16, zIndex: 999 }}

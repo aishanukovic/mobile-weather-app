@@ -55,7 +55,7 @@ const WeatherDisplay = ({ unitToggle }: { unitToggle: React.ReactNode }) => {
     );
   }
 
-  const d = forecast.data.list[0]; // closest forecast (used for "Today")
+  const d = forecast.data.list[0];
   const city = forecast.data.city;
 
   const formatted = {

@@ -12,7 +12,7 @@ const ForecastScreen = () => {
 
   useEffect(() => {
     if (typeof city === 'string') {
-      const cityOnly = city.split(',')[0].trim(); // ✅ remove country code
+      const cityOnly = city.split(',')[0].trim();
       dispatch(fetchForecastData(cityOnly));
     }
   }, [city, dispatch]);

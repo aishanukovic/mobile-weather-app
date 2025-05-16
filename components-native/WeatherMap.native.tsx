@@ -47,7 +47,6 @@ const WeatherMap = () => {
   const { MapView, Marker, UrlTile, PROVIDER_GOOGLE } = mapComponents;
   const { lat, lon } = forecastData.city.coord;
 
-  // Generate a unique key for the UrlTile to force re-render when mapType changes
   const tileKey = `map-tile-${mapType}-${Date.now()}`;
 
   return (

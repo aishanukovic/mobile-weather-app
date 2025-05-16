@@ -1,4 +1,4 @@
-import { Image } from 'expo-image'; // ✅ for GIF support
+import { Image } from 'expo-image';
 import { useRouter } from 'expo-router';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
@@ -19,15 +19,13 @@ const HomeScreen = () => {
 
   return (
     <View style={styles.container}>
-      {/* 🔽 GIF Background */}
       <Image
-        source={require('../assets/weather-bg.gif')} // replace with your actual GIF file
+        source={require('../assets/weather-bg.gif')}
         style={StyleSheet.absoluteFill}
         contentFit="cover"
         autoplay
       />
 
-      {/* 🔽 Foreground content */}
       <Image
         source={require('../assets/cropped-logo.png')}
         style={styles.logo}

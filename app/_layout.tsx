@@ -6,14 +6,13 @@ import Toast from 'react-native-toast-message';
 import { Provider } from 'react-redux';
 import { store } from '../redux/store';
 
-// ✅ Global push notification handler
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
     shouldShowAlert: true,
     shouldPlaySound: false,
     shouldSetBadge: false,
-    shouldShowBanner: true,  // ✅ NEW
-    shouldShowList: true,    // ✅ NEW
+    shouldShowBanner: true,
+    shouldShowList: true,
   }),
 });
 
@@ -26,7 +25,7 @@ export default function RootLayout() {
     <Provider store={store}>
       <SafeAreaProvider>
         <Stack screenOptions={{ headerShown: false }} />
-        <Toast /> {/* ✅ Toast message UI mount */}
+        <Toast />
       </SafeAreaProvider>
     </Provider>
   );

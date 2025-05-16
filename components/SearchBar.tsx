@@ -17,7 +17,7 @@ import {
   fetchLocationSuggestions,
   setQuery,
 } from '../redux/searchSlice';
-import { getCurrentLocation } from './locationHelpers'; // ✅ NEW
+import { getCurrentLocation } from './locationHelpers';
 
 type Props = {
   onSearch?: (city: string) => void;
@@ -211,7 +211,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   locationButton: {
-    backgroundColor: '#444', // optional: style differently
+    backgroundColor: '#444',
     width: '50%',
     alignSelf: 'center',
     position: 'relative',
