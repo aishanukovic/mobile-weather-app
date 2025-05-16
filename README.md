@@ -1,50 +1,195 @@
-# Welcome to your Expo app 👋
+# Mobile Weather App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A modern mobile weather forecasting app built with **React Native (Expo)**. Users can search for any city in the world and view the current weather, hourly forecast, 5-day forecast, and weather maps for different conditions such as temperature, wind, clouds, and precipitation.
 
-## Get started
+---
 
-1. Install dependencies
+## Features
 
-   ```bash
-   npm install
-   ```
+- Search for cities with autocomplete
+- View current weather conditions
+- Hourly and 5-day weather forecasts
+- Weather maps: temperature, clouds, wind, precipitation
+- Geolocation support
+- Push notifications (opt-in)
+- Clean, responsive UI
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## Technologies Used
 
-In the output, you'll find options to open the app in a
+- [React Native](https://reactnative.dev/)
+- [Expo](https://expo.dev/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [OpenWeatherMap API](https://openweathermap.org/api)
+- [Expo Router](https://expo.github.io/router/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Expo Notifications](https://docs.expo.dev/versions/latest/sdk/notifications/)
+- [Expo Location](https://docs.expo.dev/versions/latest/sdk/location/)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Project Structure
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+app/
+├── [city]/
+   ├── _layout.tsx
+   ├── forecast.tsx
+   ├── hourly.tsx
+   ├── index.tsx
+   ├── map.tsx
+├── _layout.tsx    
+├── index.tsx   
+components/
+├── HourlyForecast.tsx
+├── locationHelpers.ts
+├── notifications.ts
+├── SearchBar.tsx
+├── UnitToggle.tsx
+├── WeatherDisplay.tsx
+├── WeatherForecast.tsx
+components-native/
+├── WeatherMap.native.tsx
+├── WeatherMap.web.tsx
+redux/
+├── forecastSlice.ts
+├── searchSlice.ts
+├── hooks.ts
+├── store.ts
+├── unitSlice.ts
+assets/
+├── static files, such as photos
+.env                
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## Prerequisites
 
-To learn more about developing your project with Expo, look at the following resources:
+> Follow each step exactly and you’ll be able to run the app successfully.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### ✅ Install these tools:
 
-## Join the community
+1. **Node.js** (v18 or later): [https://nodejs.org](https://nodejs.org)
+2. **Git**: [https://git-scm.com/downloads](https://git-scm.com/downloads)
+3. **Expo CLI**:
+   ```bash
+   npm install -g expo-cli
+   ```
+4. **Expo Go App** on your mobile phone:
+   - iOS: App Store → Search for "Expo Go"
+   - Android: Google Play → Search for "Expo Go"
 
-Join our community of developers creating universal apps.
+---
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## How to Set Up the Project (Step-by-Step)
+
+### 1. **Clone the Project**
+
+```bash
+git clone https://github.com/your-username/mobile-weather-app.git
+cd mobile-weather-app
+```
+
+### 2. **Install Dependencies**
+
+```bash
+npm install
+```
+
+### 3. **Create a `.env` File**
+
+This file stores your secret API key so it’s not hardcoded into the app.
+
+Create a file called `.env` in the root folder and add the following line:
+
+```bash
+VITE_WEATHER_API_KEY=your_openweathermap_api_key
+```
+
+> Replace `your_openweathermap_api_key` with your own API key from [OpenWeatherMap](https://openweathermap.org/appid).
+
+### 4. **Run the Project on Your Device**
+
+Start the Expo development server:
+
+```bash
+npx expo start
+```
+
+This will open a page in your browser with a QR code.
+
+#### To view the app on your phone:
+
+- Open the **Expo Go** app on your phone
+- Scan the QR code from your screen
+- The app will launch on your phone!
+
+---
+
+## Troubleshooting
+
+### Problem: “expo-module-scripts/tsconfig.base” not found?
+
+Try updating your `tsconfig.json`:
+
+```json
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts"
+  ]
+}
+```
+
+If the problem persists, run:
+
+```bash
+rm -rf node_modules
+npm install
+```
+
+---
+
+## .gitignore
+
+Make sure the `.env` file is ignored by Git. Your `.gitignore` should include:
+
+```
+.env
+node_modules
+```
+
+---
+
+## FAQ
+
+### Can I run this app in a browser?
+
+Yes. Expo supports web preview. Run:
+
+```bash
+npx expo start --web
+```
+
+> Some features like geolocation or push notifications might not work in the browser.
+
+---
+
+## Reset Cache
+
+If you encounter weird behavior:
+
+```bash
+npx expo start -c
+```
