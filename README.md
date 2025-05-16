@@ -12,6 +12,7 @@ A modern mobile weather forecasting app built with **React Native (Expo)**. User
 - Weather maps: temperature, clouds, wind, precipitation
 - Geolocation support
 - Push notifications (opt-in)
+- Haptic Responsiveness
 - Clean, responsive UI
 
 ---
@@ -88,7 +89,7 @@ assets/
 ### 1. **Clone the Project**
 
 ```bash
-git clone https://github.com/your-username/mobile-weather-app.git
+git clone https://github.com/aishanukovic/mobile-weather-app.git
 cd mobile-weather-app
 ```
 
